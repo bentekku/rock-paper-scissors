@@ -53,6 +53,9 @@ function playRound (playerSelection, computerSelection)
             else if(playerSelection != "rock" || playerSelection != "paper" || playerSelection != "scissor"){
                 console.log("Please select one of the options: ROCK, PAPER OR SCISSOR");
             }
+
+            playerSelection = prompt("Rock, Paper or Scissor?: ").toLowerCase();
+            computerSelection = getComputerChoice().toLowerCase();
         }
     }
     // console.log(`Round one is over. \n Player Points: ${playerPoints} \n Computer Points: ${computerPoints}`);
