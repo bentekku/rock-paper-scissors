@@ -4,9 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
     <title>Rock, Paper and Scissors</title>
   </head>
   <body>
-    <script src="./script.js"></script>
+    <main class="container">
+      <header>
+        <h1>ROCK PAPER SCISSORS</h1>
+      </header>
+      <div class="content-wrapper">
+        <p id="user-score">Your Score :</p>
+        <p id="computer-score">Computer Score :</p>
+        <div class="button-wrapper">
+          <button id="btn-rock">
+            <img
+              id="img-rock"
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/65/raised-fist_270a.png"
+              alt=""
+            />
+          </button>
+          <button id="btn-paper">
+            <img
+              id="img-paper"
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/65/raised-hand_270b.png"
+              alt=""
+            />
+          </button>
+          <button id="btn-scissor">
+            <img
+              id="img-scissor"
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/65/victory-hand_270c.png"
+              alt=""
+            />
+          </button>
+        </div>
+        <p id="winner-display">Winner :</p>
+      </div>
+      <footer>
+        <p id="creator">
+          Created by:
+          <a
+            id="creator-attribution"
+            href="https://github.com/mikeykuin"
+            target="_blank"
+            >Shadab Khan</a
+          >
+        </p>
+        <p>
+          <a
+            href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors"
+            target="_blank"
+            >[ The Odin Project Assignment ]</a
+          >
+        </p>
+      </footer>
+    </main>
   </body>
 </html>

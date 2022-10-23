@@ -1,87 +1,59 @@
 // VARIABLES
 let playerPoints = 0;
 let computerPoints = 0;
+let userMove;
 
-const choices = ["rock", "paper", "scissor"];
+let computerChoice = null;
 
-//  Main function which is responsible for the comparision of player and computer selections, resulting in text which declares who's
-//  the winner of the game
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === "") {
-    alert("Player decision required to calculate the outcome.");
-  } else {
-    // Giving five chances to the player and counting best of five
-    for (i = 0; i <= 5; i++) {
-      if (playerSelection === computerSelection) {
-        console.log("It's a tie!");
-      }
-
-      // Win-scenarios
-      else if (playerSelection === "rock" && computerSelection === "scissor") {
-        console.log(
-          `You Win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`
-        );
-
-        playerPoints++;
-      } else if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log(
-          `You Win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`
-        );
-
-        playerPoints++;
-      } else if (
-        playerSelection === "scissor" &&
-        computerSelection === "paper"
-      ) {
-        console.log(
-          `You Win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`
-        );
-
-        playerPoints++;
-      }
-
-      // Lose-scenarios
-      else if (playerSelection === "paper" && computerSelection === "scissor") {
-        console.log(
-          `You Lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`
-        );
-
-        computerPoints++;
-      } else if (playerSelection === "rock" && computerSelection === "paper") {
-        console.log(
-          `You Lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`
-        );
-
-        computerPoints++;
-      } else if (
-        playerSelection === "scissor" &&
-        computerSelection === "rock"
-      ) {
-        console.log(
-          `You Lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`
-        );
-
-        computerPoints++;
-      } else if (
-        playerSelection != "rock" ||
-        playerSelection != "paper" ||
-        playerSelection != "scissor"
-      ) {
-        console.log("Please select one of the options: ROCK, PAPER OR SCISSOR");
-      }
-
-      playerSelection = prompt("Rock, Paper or Scissor?: ").toLowerCase();
-      computerSelection = getComputerChoice().toLowerCase();
-    }
-  }
-  // console.log(`Round one is over. \n Player Points: ${playerPoints} \n Computer Points: ${computerPoints}`);
-}
+const CHOICES = ["rock", "paper", "scissor"];
 
 function getComputerChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
+  return CHOICES[Math.floor(Math.random() * CHOICES.length)];
 }
 
-const playerSelection = prompt("Rock, Paper or Scissor?: ").toLowerCase();
-const computerSelection = getComputerChoice().toLowerCase();
+const choiceBtns = document.querySelectorAll("button");
 
-playRound(playerSelection, computerSelection);
+// const choiceBtnsImg = document.querySelectorAll("img");
+
+choiceBtns.forEach((choiceBtn) =>
+  choiceBtn.addEventListener("click", (event) => {
+    // console.log(event.target);
+    getUserChoice(event.target.id);
+    computerMove = getComputerChoice().toLowerCase();
+    console.log(`computerChoice = ${computerMove}`);
+  })
+);
+
+function getUserChoice(targetName) {
+  if (targetName === "btn-rock" || targetName === "img-rock") {
+    userMove = "rock";
+    console.log(targetName);
+    console.log(userMove);
+  } else if (targetName === "btn-paper" || targetName === "img-paper") {
+    userMove = "paper";
+    console.log(targetName);
+    console.log(userMove);
+  } else if (targetName === "btn-scissor" || targetName === "img-scissor") {
+    userMove = "scissor";
+    console.log(targetName);
+    console.log(userMove);
+  }
+}
+
+function moveSetComparision(userChoice, computerChoice) {
+  if (userChoice.toLowerCase() === computerChoice) {
+    alert("its a tie!");
+  } else if (
+    userChoice.toLowerCase() === "rock" &&
+    computerChoice === "scissor"
+  ) {
+    alert(
+      `${userMove.toUpperCase()} beats ${computerChoice.toUpperCase()}. Hence you won!`
+    );
+  }
+}
+
+// const computerMove = getComputerChoice().toLowerCase();
+
+console.log(getComputerChoice());
+console.log(getUserChoice());
