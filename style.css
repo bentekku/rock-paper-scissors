@@ -36,6 +36,11 @@ header{
 
     /* wrapping of header, for responsiveness; not sure if its working tho */
     flex-wrap: wrap;
+
+    /* adding drop shadow to somewhat separate the header from the main body  */
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.55);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.55);
 }
 
 h1 {
