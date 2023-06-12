@@ -34,5 +34,5 @@ Contributions to this project are welcome. If you find any issues or would like 
 
 If you have any questions or suggestions regarding this project, feel free to contact the project owner:
 
-- Name: [Shadab Khan]
+- Name: Shadab Khan
 - GitHub: [bentekku](https://github.com/bentekku)
