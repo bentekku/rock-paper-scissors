@@ -2,6 +2,10 @@
 
 This repository contains a simple implementation of the classic game "Rock Paper Scissors" using HTML, CSS and JavaScript. The game allows two players to compete against each other by choosing one of the three options: rock, paper, or scissors. The winner is determined based on the rules of the game, where rock beats scissors, scissors beat paper, and paper beats rock.
 
+## Demo
+
+Check out the live demo of the project [here](https://bentekku.github.io/rock-paper-scissors/) to see it in action.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
